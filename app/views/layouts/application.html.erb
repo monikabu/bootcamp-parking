@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= controller_name_as_page_title(controller.controller_name) %></title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= render partial: "layouts/flash"%>
+
+<div>
+  <% if account_signed_in? %>
+    <%= link_to "Sign out", log_out_path, :method => :delete %>
+  <% else %>
+    <%= link_to "Sign up", sign_up_path %> or <%= link_to "sign in", log_in_path %>
+  <% end %>
+</div>
+<div>
+  <%= link_to "Parkings", parkings_path %>
+  <% if account_signed_in? %>
+    <%= link_to "Cars", cars_path %>
+    <%= link_to "Rents", place_rents_path %>
+  <% end %>
+</div>
+
+<%= yield %>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<%= form_for(@car) do |f|%>
+  <% if @car.errors.any?%>
+    <div>
+      <h3><%= pluralize(@car.errors.count, "error") %> 
+          prohibited this car from being created:
+      </h3>
+      <ul>
+        <% @car.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+        <%end%>
+      </ul>
+    </div>
+  <%end%>
+  <div>
+    <%= f.label :model%>
+    <div>
+      <%= f.text_field :model%>
+    </div>
+  </div>
+  <div>
+    <%= f.label :registration_number %>
+      <div>
+        <%= f.text_field :registration_number%>
+      </div>
+  </div>
+  <div>
+    <%= f.submit "save" %>
+  </div>
+<%end%>

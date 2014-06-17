@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+london:
+  city: London
+  street: Baker Street 221b
+  zip_code: 00-666
+
+madrid:
+  city: Madrid
+  street: Calle del Monte Perdido
+  zip_code: 00-111

@@ -1,0 +1,33 @@
+<div>
+  <h1>Cars index</h1>
+</div>
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th>model</th>
+        <th>registration number</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @cars.each do |car|%>
+        <tr>
+          <td><%= car.model %><td>
+          <td><%= car.registration_number %><td>
+          <td><%= link_to "edit", edit_car_path(car), id: "edit_#{car.id}" %></td>
+          <td><%= link_to "show", car_path(car), id: "show_#{car.id}" %></td>
+          <td><%= link_to "remove", car_path(car), id: "remove_#{car.id}",
+                  :method => :delete, 
+                  :data => { :confirm => 'Are you sure?' } %>
+          </td>
+        </tr>
+      <%end%>
+    </tbody>
+  </table>
+</div>
+<div>
+  <%= link_to "create new car", new_car_path%>
+</div>

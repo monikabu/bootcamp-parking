@@ -1,0 +1,29 @@
+<div>
+  <%= link_to "Go back", parkings_path %>
+</div>
+<div>
+  <h1>Parking details</h1>
+</div>
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th> city </th>
+        <th> kind </th>
+        <th> number of places</th>
+        <th> hour price </th>
+        <th> day price </th>
+      </tr>
+    <thead>
+    <tbody>
+      <tr>
+        <td><%= @parking.address.try(:city) %>
+        <td><%= @parking.kind %></td>
+        <td><%= @parking.places %></td>
+        <td><%= @parking.hour_price %></td>
+        <td><%= @parking.day_price %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+

@@ -1,0 +1,63 @@
+<%= link_to "Go back", parkings_path %>
+<%= form_for(@parking) do |f| %>
+  <% if @parking.errors.any?%>
+    <div>
+      <h3><%= pluralize(@parking.errors.count, "error") %> 
+          prohibited this parking from being created:
+      </h3>
+      <ul>
+        <% @parking.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+        <%end%>
+      </ul>
+    </div>
+  <%end%>
+  <%= f.fields_for :address do |address| %>
+      <div>
+        <%= address.label :city %>
+        <div>
+          <%= address.text_field :city %>
+        </div>
+      </div>
+      <div>
+        <%= address.label :street %>
+        <div>
+          <%= address.text_field :street %>
+        </div>
+      </div>
+      <div>
+        <%= address.label :zip_code %>
+        <div>
+          <%= address.text_field :zip_code %>
+        </div>
+      </div>
+  <%end%>
+  <div>
+    <%= f.label :kind %>
+    <div>
+      <%= f.select :kind, ['private', 'street', 'outdoor', 'indoor'] %>
+    </div>
+  </div>
+  <div>
+    <%= f.label :places %>
+    <div>
+      <%= f.text_field :places %>
+    </div>
+  </div>
+  <div>
+    <%= f.label :hour_price %>
+    <div>
+      <%= f.text_field :hour_price %>
+    </div>
+  </div>
+  <div>
+    <%= f.label :day_price %>
+    <div>
+      <%= f.text_field :day_price %>
+    </div>
+  </div> 
+  <div>
+    <%= f.submit "save" %>
+  </div>
+<%end%>
+

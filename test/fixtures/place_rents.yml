@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start_date: <%= 5.days.ago.to_s(:db) %>
+  end_date: <%= 5.days.from_now.to_s(:db) %>
+  parking: one
+  car: nissan
+  identifier: 123456789
+
+two:
+  start_date: <%= 10.days.ago.to_s(:db) %>
+  end_date: <%= 5.days.ago.to_s(:db) %>
+  parking: two 
+  car: porsche
+  identifier: 987654321

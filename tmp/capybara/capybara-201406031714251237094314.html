@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Parkings</title>
+  <link data-turbolinks-track="true" href="/assets/application.css" media="all" rel="stylesheet" />
+  <script data-turbolinks-track="true" src="/assets/application.js"></script>
+  
+</head>
+<body>
+
+<div class="flash alert">You are already signed in.</div>
+
+
+<div>
+    Signed in as imie_nazwisko@wp.pl. Not you?
+    <a data-method="delete" href="/accounts/sign_out" rel="nofollow">Sign out</a>
+</div>
+<div>
+    <a href="/parkings">Parkings</a>
+    <a href="/cars">Cars</a>
+    <a href="/place_rents">Rents</a>
+</div>
+
+<div>
+  <form accept-charset="UTF-8" action="/parkings" id="search-form" method="get"><div style="display:none"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+    <div>
+      <label for="search_for_private_parkings">Search for private parkings</label>
+      <input id="kind_private" name="kind" type="radio" value="private" />
+    </div>
+    <div>
+      <label for="search_for_public_parkings">Search for public parkings</label>
+      <input id="kind_public" name="kind" type="radio" value="public" />
+    </div>
+    <div>
+      <label for="search_for_parkings_in_a_city:">Search for parkings in a city:</label>
+      <input id="city" name="city" type="text" />
+    </div>
+    <div>
+      <label for="search_for_parkings_with_hour_price_in_a_range:_">Search for parkings with hour price in a range: </label>
+      <label for="min">Min</label>
+      <input id="hour_price_min" name="hour_price_min" type="text" />
+      <label for="max">Max</label>
+      <input id="hour_price_max" name="hour_price_max" type="text" />
+    </div>
+    <div>
+      <label for="search_for_parkings_with_day_price_in_a_range:_">Search for parkings with day price in a range: </label>
+      <label for="min">Min</label>
+      <input id="day_price_min" name="day_price_min" type="text" />
+      <label for="max">Max</label>
+      <input id="day_price_max" name="day_price_max" type="text" />
+    </div>
+    <div>
+      <input name="commit" type="submit" value="search" />
+    </div>
+</form></div>
+<div>
+  <table>
+    <thead>
+      <tr>
+        <td> Parkings </td>
+        <td></td>
+        <td></td>
+      </tr>
+    <thead>
+    <tbody>
+        <tr>
+          <td>Madrid</td>
+          <td>3</td>
+          <td>1.0</td>
+          <td>10.0</td>
+          <td><a href="/parkings/298486374" id="show_298486374">show</a></td>
+          <td><a href="/parkings/298486374/edit" id="edit_298486374">edit</a></td>
+          <td><a data-confirm="Are you sure?" data-method="delete" href="/parkings/298486374" id="remove_298486374" rel="nofollow">remove</a>
+          </td>
+          <td><a href="/parkings/298486374/place_rents/new">Rent a place</a></td>
+        </tr>
+        <tr>
+          <td>London</td>
+          <td>500</td>
+          <td>3.0</td>
+          <td>15.0</td>
+          <td><a href="/parkings/980190962" id="show_980190962">show</a></td>
+          <td><a href="/parkings/980190962/edit" id="edit_980190962">edit</a></td>
+          <td><a data-confirm="Are you sure?" data-method="delete" href="/parkings/980190962" id="remove_980190962" rel="nofollow">remove</a>
+          </td>
+          <td><a href="/parkings/980190962/place_rents/new">Rent a place</a></td>
+        </tr>
+    </tbody>
+  </table>
+</div>
+<div>
+  <a href="/parkings/new">create new parking</a>
+</div>
+
+
+
+</body>
+</html>

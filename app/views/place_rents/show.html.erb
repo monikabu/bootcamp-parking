@@ -1,0 +1,23 @@
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th> city </th>
+        <th> start date </th>
+        <th> end date </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <% if @place_rent.parking.nil?%>
+          <td>parking was closed</td>
+        <% else %>
+          <td><%= @place_rent.parking.address.city %></td>
+        <%end%>
+        <td><%= @place_rent.start_date %></td>
+        <td><%= @place_rent.end_date %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<%= link_to "Go back", place_rents_path%>

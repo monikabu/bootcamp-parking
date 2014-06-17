@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sessions</title>
+  <link data-turbolinks-track="true" href="/assets/application.css" media="all" rel="stylesheet" />
+  <script data-turbolinks-track="true" src="/assets/application.js"></script>
+  
+</head>
+<body>
+
+
+
+<div>
+    <a href="/accounts/sign_up">Sign up</a> or <a href="/accounts/sign_in">sign in</a>
+</div>
+<div>
+    <a href="/parkings">Parkings</a>
+</div>
+
+<h2>Sign in</h2>
+
+<form accept-charset="UTF-8" action="/accounts/sign_in" class="new_account" id="new_account" method="post"><div style="display:none"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+  <div><label for="account_email">Email</label><br />
+  <input autofocus="autofocus" id="account_email" name="account[email]" type="email" value="" /></div>
+
+  <div><label for="account_password">Password</label><br />
+    <input autocomplete="off" id="account_password" name="account[password]" type="password" /></div>
+
+    <div><input name="account[remember_me]" type="hidden" value="0" /><input id="account_remember_me" name="account[remember_me]" type="checkbox" value="1" /> <label for="account_remember_me">Remember me</label></div>
+
+  <div><input name="commit" type="submit" value="Sign in" /></div>
+</form>
+
+  <a href="/accounts/sign_up">Sign up</a><br />
+
+  <a href="/accounts/password/new">Forgot your password?</a><br />
+
+
+
+
+
+
+</body>
+</html>

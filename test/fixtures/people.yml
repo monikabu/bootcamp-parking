@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+anakin:
+  first_name: Anakin
+  last_name: Skywalker
+
+luke:
+  first_name: Luke
+  last_name: Skywalker
+
+  

@@ -1,0 +1,32 @@
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th>city</th>
+        <th>start date</th>
+        <th>end date</th>
+        <th>price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @place_rents.each do |rent_place| %>
+        <tr>
+          <% if rent_place.parking.nil?%>
+            <td>parking was closed</td>
+          <% else %>
+            <td><%= rent_place.parking.address.city %></td>
+          <%end%>
+          <td><%= rent_place.start_date %></td>
+          <td><%= rent_place.end_date %></td>
+          <td><%= rent_place.price %></td>
+          <td><%= link_to "show", place_rent_path(rent_place) %></td>
+          <td><%= link_to "remove", place_rent_path(rent_place), 
+                  :method => :delete, 
+                  :data => { :confirm => 'Are you sure?' } %>
+          </td>
+        </tr>
+      <%end%>
+    </tbody>
+  </table>   
+</div>
+

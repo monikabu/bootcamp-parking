@@ -1,0 +1,22 @@
+<div>
+  <h1>Car details</h1>
+</div>
+<div>
+  <%= link_to "Go back", cars_path %>
+</div>
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th>model</th>
+        <th>registration number</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= @car.model %></td>
+        <td><%= @car.registration_number %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

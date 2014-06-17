@@ -1,0 +1,67 @@
+<div>
+  <%= form_tag(parkings_path, :method => "get", id: "search-form") do %>
+    <div>
+      <%= label_tag "search for private parkings" %>
+      <%= radio_button_tag :kind, "private" %>
+    </div>
+    <div>
+      <%= label_tag "search for public parkings"%>
+      <%= radio_button_tag :kind, "public" %>
+    </div>
+    <div>
+      <%= label_tag "search for parkings in a city:" %>
+      <%= text_field_tag :city %>
+    </div>
+    <div>
+      <%= label_tag "search for parkings with hour price in a range: "%>
+      <%= label_tag "min" %>
+      <%= text_field_tag :hour_price_min %>
+      <%= label_tag "max" %>
+      <%= text_field_tag :hour_price_max %>
+    </div>
+    <div>
+      <%= label_tag "search for parkings with day price in a range: "%>
+      <%= label_tag "min" %>
+      <%= text_field_tag :day_price_min %>
+      <%= label_tag "max" %>
+      <%= text_field_tag :day_price_max %>
+    </div>
+    <div>
+      <%= submit_tag "search" %>
+    </div>
+  <%end%>
+</div>
+<div>
+  <table>
+    <thead>
+      <tr>
+        <td> Parkings </td>
+        <td></td>
+        <td></td>
+      </tr>
+    <thead>
+    <tbody>
+      <% @parkings. each do |parking|%>
+        <tr>
+          <td><%= if parking.address then parking.address.city end %></td>
+          <td><%= parking.places %></td>
+          <td><%= parking.hour_price %></td>
+          <td><%= parking.day_price %></td>
+          <td><%= link_to "show", parking_path(parking), id: "show_#{parking.id}" %></td>
+          <%if account_signed_in?%>
+          <td><%= link_to "edit", edit_parking_path(parking), id: "edit_#{parking.id}" %></td>
+            <td><%= link_to "remove", parking_path(parking), id: "remove_#{parking.id}", 
+                  :method => :delete, 
+                  :data => { :confirm => 'Are you sure?' } %>
+            </td>
+          <%end%>
+          <td><%= link_to "Rent a place", new_parking_place_rent_path(parking)%></td>
+        </tr>
+      <%end%>
+    </tbody>
+  </table>
+</div>
+<div>
+  <%= link_to "create new parking", new_parking_path%>
+</div>
+

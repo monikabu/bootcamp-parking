@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+nissan:
+  registration_number: AA 231i8 
+  model: Qashqai
+  owner: luke 
+
+porsche:
+  registration_number: BB 763a3
+  model: Cayenne
+  owner: anakin

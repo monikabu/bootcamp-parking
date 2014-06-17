@@ -1,0 +1,37 @@
+<div>
+<%= form_for(@account, url: sign_up_path) do |f|%>
+  <% if @account.errors.any?%>
+    <div>
+      <h3><%= pluralize(@account.errors.count, "error") %> 
+          prohibited this account from being created:
+      </h3>
+      <ul>
+        <% @account.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+        <%end%>
+      </ul>
+    </div>
+  <%end%>
+  <div>
+    <%= f.label :email %>
+    <div>
+      <%= f.text_field :email %>
+    </div>
+  </div>
+  <div>
+    <%= f.label :password %>
+    <div>
+      <%= f.password_field :password %>
+    </div>
+  </div>
+  <div>
+    <%= f.label :password_confirmation %>
+    <div>
+      <%= f.password_field :password_confirmation %>
+    </div>
+  </div>
+  <div>
+    <%= f.submit "Sign up" %>
+  </div>
+<%end%>
+</div>
